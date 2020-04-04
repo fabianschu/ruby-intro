@@ -9,6 +9,17 @@ p "hello".class
 p "hello".between?('a', 'z')
 p 10.between?(5, 15)
 
+# .respond_to?
+## checks if an object can respond to a method
+p 8.respond_to?("length")
+p 8.respond_to?(:length)
+
+# rand
+## generates pseudo-random number between 0 and 1
+puts rand
+puts rand (1..100)
+
+
 
 
 #### STRING METHODS
@@ -52,6 +63,12 @@ puts "123".reverse # "321"
 ## returns true if the specified substring exists in the string
 puts "hello".include?("llo") # true
 
+# .empty? / .nil?
+## returns true if string is empty or nil
+puts "".empty? # true
+name = "alice"
+str = name[20, 5]
+puts str.nil? # true
 
 
 
@@ -101,3 +118,23 @@ end
 # .step
 ## iterate as long as below 20 in steps of four
 12.step(36, 4) {|i| puts "iteration: #{i}"}
+
+
+
+#### RANGE METHODS
+
+# .first and .last
+## returns the first / last elements of a range as an array (if parameter is included)
+(5..9).first(2) # => [5, 6]
+(5..9).last(2) # => [8, 9]
+(5...9).last(2) # => [7, 8]
+
+# .size
+## returns number of elements contained in a NUMERICAL range (only works for numerical)
+(5..9).size
+
+# .include?
+## check if value is included within a range
+(5..9).include?(10) #false
+(5..9) === 10 #false
+("a".."z").include?("c") #true
