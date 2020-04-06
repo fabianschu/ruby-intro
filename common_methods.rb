@@ -138,3 +138,28 @@ end
 (5..9).include?(10) #false
 (5..9) === 10 #false
 ("a".."z").include?("c") #true
+
+
+
+##### ARRAY METHODS
+fruits = ("a", "b", "c", "d", "e")
+
+# .length
+fruits.length #5
+
+# .fetch
+p fruits.fetch(2)
+## by default: fetch throws an arrow if the index position doesn't exist
+#p fruits.fetch(10)
+## alternatively, specifify return value as second parameter
+p fruits.fetch(10, "Meeeeaaaaat")
+
+# .values_at
+## returns array elements specified by parameters
+p fruits.values_at(0, 2, 4) # ["a", "c", "e"]
+
+# .slice()
+## returns array elements specified by parameters
+## first parameter: starting index
+## second parameter: length of returned array
+p fruits.slice(2, 2);
